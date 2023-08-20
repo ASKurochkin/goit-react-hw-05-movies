@@ -25,3 +25,25 @@ export const resultMovieDetails = movieId => {
     .then(res => res.json())
     .catch(err => console.error('Error:' + err));
 };
+
+export const resultCast = movieId => {
+  const urlCast = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
+  return fetch(urlCast, options)
+    .then(res => res.json())
+    .catch(err => console.error('Error:' + err));
+};
+
+export const resultRev = movieId => {
+  const urlRev = `
+  https://api.themoviedb.org/3/movie/${movieId}/reviews`;
+  return fetch(urlRev, options)
+    .then(res => res.json())
+    .catch(err => console.error('Error:' + err));
+};
+
+export const resultSearch = name => {
+  const urlSearch = `https://api.themoviedb.org/3/search/movie?query=${name}&include_adult=false&language=en-US&page=1`;
+  return fetch(urlSearch, options)
+    .then(res => res.json())
+    .catch(err => console.error('Error:' + err));
+};
