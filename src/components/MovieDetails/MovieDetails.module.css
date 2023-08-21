@@ -1,0 +1,28 @@
+.btnBack {
+  border-radius: 5px;
+  border: gray;
+}
+
+.linkBack {
+  text-decoration: none;
+  color: black;
+}
+
+.filmCard {
+  display: flex;
+  gap: 20px;
+}
+
+.filmPoster {
+  width: 300px;
+}
+
+.filmInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.filmSubtitle {
+    font-size: 20px;
+    font-weight: 700;
+}

@@ -3,6 +3,8 @@ import { Link, useSearchParams } from 'react-router-dom';
 
 import { resultSearch } from '../../services/fetch';
 
+import css from './Movies.module.css'
+
 export default function Movies() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [foundMovies, setFoundMovies] = useState([]);
@@ -16,7 +18,7 @@ export default function Movies() {
   };
 
   const getMovies = () => {
-    resultSearch(name)
+    resultSearch({ query: name })
       .then(data => setFoundMovies(data.results))
       .catch(() => {
         setStatus('error');
@@ -27,17 +29,18 @@ export default function Movies() {
     foundMovies.length > 0
       ? foundMovies.map(({ id, title }) => {
           return (
-            <li key={id}>
+            <li key={id} className={css.searchList}>
               <Link to={`/movies/${id}`}>{title}</Link>
             </li>
           );
         })
-      : <p>Not found this movie</p>;
+      : "";
 
   return (
-    <div>
+    <div className={css.searchBox}>
       <form>
         <input
+        className={css.searchInput}
           type="text"
           placeholder="Search the movie"
           name="search"

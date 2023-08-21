@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { resultRev } from '../../services/fetch';
+import css from './Reviews.module.css'
 
 export default function Reviews() {
   const [rev, setRev] = useState([]);
@@ -13,12 +14,12 @@ export default function Reviews() {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.reviewsBox}>
       {rev && rev.length > 0 ? (
         <p>
           {rev.map(item => (
-            <li key={item.id}>
-              <p>Author: {item.author}</p>
+            <li key={item.id} className={css.reviewsList}>
+              <p className={css.reviewsAuthor}>Author: {item.author}</p>
               <p> {item.content}</p>
             </li>
           ))}

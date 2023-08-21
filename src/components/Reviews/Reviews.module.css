@@ -1,0 +1,12 @@
+.reviewsBox {
+    padding-left: 20px;
+}
+
+.reviewsList{
+    list-style: none;
+}
+
+.reviewsAuthor {
+    font-size: 18px;
+    font-weight: 700;
+}
