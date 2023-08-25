@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/673.2dd5b8e6.chunk.css","mappings":"AAAA,0BACE,eACF,CAEA,4BACE,WACF,CAEA,0BACI,cACJ","sources":["components/Movies/Movies.module.css"],"sourcesContent":[".searchBox {\n  margin-top: 20px;\n}\n\n.searchInput {\n  width: 400px;\n}\n\n.searchList {\n    margin-top: 5px;\n}\n"],"names":[],"sourceRoot":""}
